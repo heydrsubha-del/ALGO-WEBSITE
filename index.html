@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07121d">
+  <meta name="description" content="Algorithmistic helps investigators examine suspicious email, understand risk signals, trace routing clues, and prepare evidence-led reports.">
+  <title>Algorithmistic — Email threat analysis</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Algorithmistic home">
+      <img class="brand-logo" src="assets/algorithmistic-logo.png" alt="">
+      <span>ALGORITHMISTIC</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#platform">Platform</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#privacy">Privacy</a>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span class="theme-toggle-label">Dark theme</span></button>
+      <a class="nav-cta" href="https://github.com/heydrsubha-del/SMART-INDIA-HACKATHON-PROJECT-26106" target="_blank" rel="noreferrer">View project <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">Email security <span aria-hidden="true">/</span> Threat intelligence</p>
+        <h1>Make suspicious email<br><em>make sense.</em></h1>
+        <p class="hero-lede">Trace the signals behind a message. Algorithmistic brings explainable phishing analysis, routing clues, and evidence-led reporting into one investigator workspace.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workflow">Explore the workflow <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="https://github.com/heydrsubha-del/SMART-INDIA-HACKATHON-PROJECT-26106" target="_blank" rel="noreferrer">Browse source <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-facts" aria-label="Platform principles">
+          <span><b>01</b> Local-first analysis</span>
+          <span><b>02</b> Explainable signals</span>
+          <span><b>03</b> Human review</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Illustrative sample analysis report">
+        <div class="visual-glow"></div>
+        <div class="report-window">
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>CASE / SAMPLE-042</span><span class="live-label"><i></i> ANALYSIS</span></div>
+          <div class="report-topline"><div><span class="micro-label">MESSAGE REVIEW</span><h2>Invoice update required</h2><p>sample-message.eml <span>·</span> 148 KB</p></div><div class="score-ring"><span>71</span><small>/100</small></div></div>
+          <div class="verdict-row"><span class="severity-tag"><i></i> HIGH RISK</span><span class="report-note">Review evidence before action</span></div>
+          <div class="signal-list">
+            <div class="signal"><span class="signal-icon signal-red">↗</span><span><b>Link reputation</b><small>Look-alike domain observed</small></span><strong>HIGH</strong></div>
+            <div class="signal"><span class="signal-icon signal-amber">⌁</span><span><b>Sender authentication</b><small>DMARC alignment failed</small></span><strong>CHECK</strong></div>
+            <div class="signal"><span class="signal-icon signal-blue">◎</span><span><b>Routing context</b><small>Origin hop needs review</small></span><strong>TRACE</strong></div>
+          </div>
+          <div class="report-footer"><span><i class="tiny-check">✓</i> Evidence-linked findings</span><span>ILLUSTRATIVE SAMPLE</span></div>
+        </div>
+        <div class="floating-chip chip-one"><span class="chip-symbol">⌘</span><span>Explainable<br><b>risk signals</b></span></div>
+        <div class="floating-chip chip-two"><span class="chip-symbol chip-green">⌖</span><span>Routing<br><b>context</b></span></div>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </section>
+
+    <section class="ticker" aria-label="Analysis capabilities">
+      <div class="ticker-track"><span>EMAIL PARSING</span><b>✳</b><span>AUTHENTICATION CHECKS</span><b>✳</b><span>INDICATOR EXTRACTION</span><b>✳</b><span>ROUTE INTELLIGENCE</span><b>✳</b><span>FORENSIC REPORTS</span><b>✳</b><span>EMAIL PARSING</span><b>✳</b><span>AUTHENTICATION CHECKS</span><b>✳</b><span>INDICATOR EXTRACTION</span></div>
+    </section>
+
+    <section class="platform section-wrap" id="platform">
+      <div class="section-heading">
+        <p class="eyebrow">01 / The platform</p>
+        <h2>One message.<br><em>Multiple lines of evidence.</em></h2>
+        <p>Instead of relying on a single suspicious word or score, the workflow brings distinct signals together and keeps the reasoning visible.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-large"><div class="feature-top"><span class="feature-number">01</span><span class="feature-icon">⌕</span></div><h3>Explainable detection</h3><p>A text classifier, header checks, identity anomalies, link signals, and origin context contribute to a weighted risk view you can inspect.</p><div class="mini-bars" aria-label="Illustrative signal weights"><span style="--bar:82%"></span><span style="--bar:64%"></span><span style="--bar:51%"></span><span style="--bar:36%"></span><span style="--bar:23%"></span></div><small class="card-caption">Signal contribution · illustrative</small></article>
+        <article class="feature-card"><div class="feature-top"><span class="feature-number">02</span><span class="feature-icon icon-green">⌖</span></div><h3>Trace the route</h3><p>Reconstruct mail hops and review approximate origin and infrastructure clues, including VPN or Tor context.</p><span class="card-link">Header & network context <b>↗</b></span></article>
+        <article class="feature-card"><div class="feature-top"><span class="feature-number">03</span><span class="feature-icon icon-violet">⌘</span></div><h3>Connect related cases</h3><p>Compare indicators and origin patterns to surface possible campaigns. Optional local models can add evidence-limited narratives and semantic comparisons.</p><span class="card-link">Local models are optional <b>↗</b></span></article>
+        <article class="feature-card"><div class="feature-top"><span class="feature-number">04</span><span class="feature-icon icon-orange">▤</span></div><h3>Keep the evidence clear</h3><p>Prepare reports with the score breakdown, extracted indicators, routing observations, and a hash of the source evidence.</p><span class="card-link">Markdown report exports <b>↗</b></span></article>
+        <article class="feature-card feature-wide"><div class="feature-top"><span class="feature-number">05</span><span class="feature-icon icon-blue">↻</span></div><div><h3>Built for an investigator’s workflow</h3><p>Review uploaded messages, CSV batches, or a read-only IMAP mailbox. Local threat memory and analyst feedback help organize repeat observations while preserving a human review step.</p></div><div class="wide-pills"><span>EML / TXT</span><span>CSV BATCH</span><span>READ-ONLY IMAP</span><span>LOCAL MEMORY</span></div></article>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow">
+      <div class="section-wrap workflow-inner">
+        <div class="section-heading section-heading-light">
+          <p class="eyebrow">02 / The workflow</p>
+          <h2>From raw message<br><em>to reviewable findings.</em></h2>
+          <p>Each stage adds context. The result is a structured lead for investigation, not an automatic accusation or final decision.</p>
+        </div>
+        <div class="workflow-steps">
+          <article class="step"><span class="step-index">01</span><div><h3>Acquire</h3><p>Open a message file, batch, or read-only mailbox session.</p></div><span class="step-mark">↓</span></article>
+          <article class="step"><span class="step-index">02</span><div><h3>Examine</h3><p>Parse headers and content; inspect authentication and suspicious indicators.</p></div><span class="step-mark">↓</span></article>
+          <article class="step"><span class="step-index">03</span><div><h3>Correlate</h3><p>Review route, infrastructure, local memory, and related-case signals.</p></div><span class="step-mark">↓</span></article>
+          <article class="step"><span class="step-index">04</span><div><h3>Review</h3><p>Inspect how each signal supports the weighted risk assessment.</p></div><span class="step-mark">↓</span></article>
+          <article class="step"><span class="step-index">05</span><div><h3>Report</h3><p>Export a traceable summary with limitations and evidence references.</p></div><span class="step-mark">✓</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap section-wrap" id="roadmap">
+      <div class="roadmap-card"><div class="roadmap-art" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="orbit-core">!</span><span class="orbit-point"></span></div><div class="roadmap-copy"><p class="eyebrow">In development / Safety signals</p><h2>Recognise the pattern.<br><em>Handle the message with care.</em></h2><p>A sextortion detection capability is planned to identify context that combines claims of private material, financial demands, and threats of exposure. It is not represented as a released or validated detector.</p><div class="roadmap-status"><span class="status-dot"></span> Planned pilot: synthetic and authorised samples · accuracy · false positives · usability</div></div></div>
+    </section>
+
+    <section class="privacy section-wrap" id="privacy">
+      <div class="privacy-copy"><p class="eyebrow">03 / Privacy & control</p><h2>Designed to keep<br><em>analysis deliberate.</em></h2><p>The project is local-first. Email analysis and optional integrations run in the environment hosting the application. This informational site does not accept email uploads or run an analysis.</p><a class="text-link" href="https://github.com/heydrsubha-del/SMART-INDIA-HACKATHON-PROJECT-26106#-data-storage--privacy" target="_blank" rel="noreferrer">Read the project privacy notes <span>↗</span></a></div>
+      <div class="privacy-points"><article><span class="privacy-icon">⌂</span><div><h3>Local-first by default</h3><p>The app’s default workflow stores threat memory locally. Optional network services are described in the project documentation.</p></div></article><article><span class="privacy-icon">◉</span><div><h3>Mailbox access stays read-only</h3><p>The documented IMAP connection does not mark, move, or delete messages.</p></div></article><article><span class="privacy-icon">⟡</span><div><h3>People stay in the loop</h3><p>Scores and correlations are investigative leads. A reviewer should assess the evidence and limitations.</p></div></article></div>
+    </section>
+
+    <section class="closing section-wrap"><div class="closing-line"></div><p class="eyebrow">Algorithmistic / SIH 26106</p><h2>Investigate with<br><em>context, not guesswork.</em></h2><div class="closing-actions"><a class="button button-primary" href="https://github.com/heydrsubha-del/SMART-INDIA-HACKATHON-PROJECT-26106" target="_blank" rel="noreferrer">Explore the source <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="#top">Back to top <span aria-hidden="true">↑</span></a></div></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-small" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>ALGORITHMISTIC</span></a><p>Email threat analysis with explainable signals.</p><div class="footer-links"><a href="https://github.com/heydrsubha-del/SMART-INDIA-HACKATHON-PROJECT-26106" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://github.com/heydrsubha-del/SMART-INDIA-HACKATHON-PROJECT-26106#-data-storage--privacy" target="_blank" rel="noreferrer">Privacy notes ↗</a></div><small>© <span id="year"></span> Algorithmistic</small></footer>
+</body>
+</html>
