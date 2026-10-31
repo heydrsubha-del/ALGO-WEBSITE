@@ -55,3 +55,30 @@ if ('IntersectionObserver' in window) {
   if (heroTop) new IntersectionObserver(([e]) => document.body.classList.toggle('show-cta', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroTop);
   if (closing) new IntersectionObserver(([e]) => document.body.classList.toggle('cta-hide', e.isIntersecting)).observe(closing);
 }
+
+/* Scroll reveal, pipeline line draw, and count-up for the at-a-glance numbers */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealTargets = document.querySelectorAll('.section-heading,.specs dl,.spec-grid,.pipeline,.notice,.privacy-copy,.privacy-points,.closing');
+if ('IntersectionObserver' in window && !reduce) {
+  revealTargets.forEach((el) => el.classList.add('reveal'));
+  const seen = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    seen.unobserve(e.target);
+    if (e.target.matches('.specs dl')) countUp(e.target);
+  }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  revealTargets.forEach((el) => seen.observe(el));
+}
+function countUp(root) {
+  root.querySelectorAll('[data-count]').forEach((el) => {
+    const end = Number(el.dataset.count);
+    if (!end) return;
+    const t0 = performance.now();
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / 900);
+      el.textContent = String(Math.round(end * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}

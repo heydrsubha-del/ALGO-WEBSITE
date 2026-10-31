@@ -46,6 +46,7 @@
   </header>
 
   <main id="main">
+    <div class="grid-bg" aria-hidden="true"></div>
     <section class="hero section-wrap" id="top">
       <div class="hero-top">
         <div class="hero-copy">
@@ -56,6 +57,7 @@
             <a class="button button-primary" href="#workflow">Explore the workflow</a>
             <a class="button button-quiet" href="https://sarkar000algorithmistic.streamlit.app/" target="_blank" rel="noreferrer">Launch app <svg class="i" aria-hidden="true"><use href="#i-out"/></svg></a>
           </div>
+          <p class="fine">This site never receives your email. Analysis runs in the app.</p>
         </div>
         <dl class="facts">
           <div><dt>Local-first</dt><dd>Analysis runs where you host it.</dd></div>
@@ -69,14 +71,14 @@
         <div class="pane pane-raw">
           <div class="pane-head"><span class="mono">sample-message.eml</span><span class="mono dim">raw message</span></div>
           <ol class="code">
-            <li><code>Return-Path: &lt;bounce@invoice-pay.example&gt;</code></li>
-            <li class="flag" data-sig="6" tabindex="0" style="--c:var(--low);--d:1s"><code>Received: from relay.invoice-pay.example ([203.0.113.45])</code><span class="flag-tag">Origin hop</span></li>
-            <li class="flag" data-sig="3" tabindex="0" style="--c:var(--high);--d:1.2s"><code>Authentication-Results: spf=softfail; dkim=none; dmarc=fail</code><span class="flag-tag">Auth failed</span></li>
-            <li class="flag" data-sig="4" tabindex="0" style="--c:var(--med);--d:1.4s"><code>From: "Accounts Team" &lt;billing@acme-payments.example&gt;</code><span class="flag-tag">Look-alike domain</span></li>
-            <li class="flag" data-sig="4" tabindex="0" style="--c:var(--med);--d:1.6s"><code>Reply-To: &lt;recover@mailbox-desk.example&gt;</code><span class="flag-tag">Reply-To mismatch</span></li>
-            <li><code>To: undisclosed-recipients:;</code></li>
-            <li><code>Subject: Invoice update required</code></li>
-            <li><code>MIME-Version: 1.0</code></li>
+            <li><code><span class="k">Return-Path:</span> &lt;bounce@invoice-pay.example&gt;</code></li>
+            <li class="flag" data-sig="6" tabindex="0" style="--c:var(--low);--d:1s"><code><span class="k">Received:</span> from relay.invoice-pay.example ([203.0.113.45])</code><span class="flag-tag">Origin hop</span></li>
+            <li class="flag" data-sig="3" tabindex="0" style="--c:var(--high);--d:1.2s"><code><span class="k">Authentication-Results:</span> spf=softfail; dkim=none; dmarc=fail</code><span class="flag-tag">Auth failed</span></li>
+            <li class="flag" data-sig="4" tabindex="0" style="--c:var(--med);--d:1.4s"><code><span class="k">From:</span> "Accounts Team" &lt;billing@acme-payments.example&gt;</code><span class="flag-tag">Look-alike domain</span></li>
+            <li class="flag" data-sig="4" tabindex="0" style="--c:var(--med);--d:1.6s"><code><span class="k">Reply-To:</span> &lt;recover@mailbox-desk.example&gt;</code><span class="flag-tag">Reply-To mismatch</span></li>
+            <li><code><span class="k">To:</span> undisclosed-recipients:;</code></li>
+            <li><code><span class="k">Subject:</span> Invoice update required</code></li>
+            <li><code><span class="k">MIME-Version:</span> 1.0</code></li>
             <li class="flag" data-sig="1" tabindex="0" style="--c:var(--brand);--d:2.1s"><code>Your invoice is overdue and needs immediate payment.</code><span class="flag-tag">Urgent language</span></li>
             <li class="flag" data-sig="2" tabindex="0" style="--c:var(--violet);--d:2.3s"><code>Our bank details have changed. Use the new account below.</code><span class="flag-tag">Payment change</span></li>
             <li class="flag" data-sig="5" tabindex="0" style="--c:var(--crit);--d:2.5s"><code>Pay now: hxxps://acme-payments[.]example/pay</code><span class="flag-tag">Suspicious link</span></li>
@@ -114,13 +116,23 @@
       <ul aria-hidden="true"><li>Email parsing</li><li>Authentication checks</li><li>Indicator extraction</li><li>Route intelligence</li><li>Forensic reports</li><li>Email parsing</li><li>Authentication checks</li><li>Indicator extraction</li><li>Route intelligence</li><li>Forensic reports</li></ul>
     </div></section>
 
+    <section class="specs section-wrap" aria-label="At a glance">
+      <dl>
+        <div><dt>Weighted signals</dt><dd class="num" data-count="6">6</dd><dd class="note">Language, BEC, authentication, headers, links, origin</dd></div>
+        <div><dt>Point scale</dt><dd class="num" data-count="100">100</dd><dd class="note">Each signal scores against its own maximum</dd></div>
+        <div><dt>Verdict bands</dt><dd class="num" data-count="4">4</dd><dd class="note">Low, medium, high and critical</dd></div>
+        <div><dt>Mailbox changes</dt><dd class="num" data-count="0">0</dd><dd class="note">IMAP access is read-only</dd></div>
+      </dl>
+    </section>
+
     <section class="platform section-wrap" id="platform">
       <div class="section-heading">
+        <p class="eyebrow">platform / signals</p>
         <h2>One message. <span class="soft">Multiple lines of evidence.</span></h2>
         <p>Instead of relying on a single suspicious word or score, the workflow brings distinct signals together and keeps the reasoning visible.</p>
       </div>
-      <div class="platform-grid">
-        <article class="panel weights">
+      <div class="spec-grid">
+        <article class="cell cell-weights">
           <svg class="i tile" aria-hidden="true" style="--c:var(--brand)"><use href="#i-search"/></svg>
           <h3>Explainable detection</h3>
           <p>A text classifier, authentication checks, identity anomalies, link signals, and origin context combine into a weighted risk score you can inspect line by line.</p>
@@ -151,9 +163,8 @@
             <div><h3>Keep the evidence clear</h3><p>Reports carry the score breakdown, extracted indicators, routing observations, and a hash of the source evidence.</p><p class="tags"><span>SHA-256 hash</span><span>Markdown export</span></p></div>
           </article>
         </div>
-      </div>
-      <div class="sources">
-        <div><h3>Built for an investigator’s workflow</h3><p>Review uploaded messages, CSV batches, or a read-only IMAP mailbox. Local threat memory and analyst feedback help organise repeat observations while keeping a human review step.</p></div>
+            <div class="sources">
+        <div class="sources-text"><h3>Built for an investigator’s workflow</h3><p>Review uploaded messages, CSV batches, or a read-only IMAP mailbox. Local threat memory and analyst feedback help organise repeat observations while keeping a human review step.</p></div>
         <dl>
           <div><dt>EML / TXT</dt><dd>Single messages</dd></div>
           <div><dt>CSV batch</dt><dd>Many at once</dd></div>
@@ -161,11 +172,13 @@
           <div><dt>Local memory</dt><dd>Repeat observations</dd></div>
         </dl>
       </div>
+      </div>
     </section>
 
     <section class="workflow" id="workflow">
       <div class="section-wrap">
         <div class="section-heading">
+          <p class="eyebrow">workflow / pipeline</p>
           <h2>From raw message <span class="soft">to reviewable findings.</span></h2>
           <p>Each stage adds context. The result is a structured lead for investigation, not an automatic accusation or final decision.</p>
         </div>
@@ -197,6 +210,7 @@
 
     <section class="privacy section-wrap" id="privacy">
       <div class="privacy-copy">
+        <p class="eyebrow">privacy / control</p>
         <h2>Designed to keep <span class="soft">analysis deliberate.</span></h2>
         <p>The project is local-first. Email analysis and optional integrations run in the environment hosting the application. This informational site does not accept email uploads or run an analysis.</p>
       </div>
@@ -218,14 +232,15 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner section-wrap">
-      <a class="brand" href="#top"><img src="assets/algorithmistic-logo.png" alt="" width="40" height="40"><span>Algorithmistic</span></a>
-      <p>Email threat analysis with explainable signals. Smart India Hackathon project SIH26106.</p>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="https://sarkar000algorithmistic.streamlit.app/" target="_blank" rel="noreferrer">Launch app</a>
-      </nav>
-      <small>© <span id="year"></span> Algorithmistic</small>
+    <div class="footer-grid section-wrap">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><img src="assets/algorithmistic-logo.png" alt="" width="40" height="40"><span>Algorithmistic</span></a>
+        <p>Email threat analysis with explainable signals, routing context and evidence-led reports.</p>
+      </div>
+      <nav aria-label="Product"><p class="foot-title">Product</p><a href="#platform">Platform</a><a href="#workflow">Workflow</a><a href="https://sarkar000algorithmistic.streamlit.app/" target="_blank" rel="noreferrer">Launch app</a></nav>
+      <nav aria-label="Project"><p class="foot-title">Project</p><a href="#privacy">Privacy &amp; control</a><a href="#roadmap">Roadmap</a><a href="#top">Back to top</a></nav>
     </div>
+    <div class="footer-bar section-wrap"><small>© <span id="year"></span> Algorithmistic</small><small>Smart India Hackathon · SIH26106</small></div>
   </footer>
   <a class="button button-primary mobile-cta" href="https://sarkar000algorithmistic.streamlit.app/" target="_blank" rel="noreferrer">Launch app <svg class="i" aria-hidden="true"><use href="#i-out"/></svg></a>
 </body>
