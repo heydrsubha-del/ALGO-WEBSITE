@@ -17,8 +17,7 @@ document.addEventListener('keydown', (e) => {
 const themeButton = document.querySelector('.theme-toggle');
 function syncTheme() {
   const dark = root.dataset.theme === 'dark';
-  themeButton?.setAttribute('aria-pressed', String(dark));
-  themeButton?.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  themeButton?.setAttribute('aria-checked', String(dark));
 }
 syncTheme();
 themeButton?.addEventListener('click', () => {
@@ -30,3 +29,11 @@ themeButton?.addEventListener('click', () => {
 
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+const stack = document.querySelector('.stack');
+if (stack) {
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { stack.classList.add('is-visible'); io.disconnect(); } }, { threshold: 0.4 });
+    io.observe(stack);
+  } else stack.classList.add('is-visible');
+}
