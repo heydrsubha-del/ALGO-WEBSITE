@@ -37,3 +37,8 @@ if (stack) {
     io.observe(stack);
   } else stack.classList.add('is-visible');
 }
+
+const consolePanel = document.querySelector('.console');
+if (consolePanel && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([e]) => consolePanel.classList.toggle('is-paused', !e.isIntersecting)).observe(consolePanel);
+}
