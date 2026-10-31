@@ -42,3 +42,16 @@ const consolePanel = document.querySelector('.console');
 if (consolePanel && 'IntersectionObserver' in window) {
   new IntersectionObserver(([e]) => consolePanel.classList.toggle('is-paused', !e.isIntersecting)).observe(consolePanel);
 }
+
+const tabButtons = document.querySelectorAll('.console-tabs button');
+tabButtons.forEach((btn) => btn.addEventListener('click', () => {
+  consolePanel.dataset.tab = btn.dataset.tab;
+  tabButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+}));
+
+if ('IntersectionObserver' in window) {
+  const heroTop = document.querySelector('.hero-top');
+  const closing = document.querySelector('.closing');
+  if (heroTop) new IntersectionObserver(([e]) => document.body.classList.toggle('show-cta', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroTop);
+  if (closing) new IntersectionObserver(([e]) => document.body.classList.toggle('cta-hide', e.isIntersecting)).observe(closing);
+}
