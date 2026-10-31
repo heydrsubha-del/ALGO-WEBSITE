@@ -1,19 +1,25 @@
 # Algorithmistic public website
 
-This is a standalone, responsive product website for the Algorithmistic email forensics project. It uses plain HTML, CSS, and JavaScript; it does not include the email analyzer, backend, credentials, private datasets, or uploaded-message handling.
+Standalone, responsive product site for the Algorithmistic email forensics project. Plain HTML, CSS and JavaScript. It does not include the analyzer, backend, credentials, datasets or any upload handling.
 
 ## Preview
 
-Open `index.html` in a browser. For a local HTTP preview, run `python -m http.server 8000` from this folder and visit `http://localhost:8000`.
+Open `index.html`, or run `python -m http.server 8000` in this folder and visit `http://localhost:8000`.
 
 ## Files
 
-- `index.html` — page structure and original website copy
-- `styles.css` — responsive visual design and layout
-- `script.js` — mobile navigation and current-year footer
+- `index.html`: structure, copy, inline SVG icon sprite, favicon
+- `styles.css`: tokens (colour, type, radius) at the top, then components; light and dark themes
+- `script.js`: mobile menu, theme toggle (saved choice, else system preference), footer year
 
-The sample report panel is illustrative and uses no live analysis. The sextortion detector is labeled as in development because the project materials describe it as planned work, not a released, validated feature. The site contains no analytics, forms, or email upload interface.
+## Design notes
+
+- Palette comes from the project brand: navy ink, one cyan accent, amber for the "high" severity. Colour is used for meaning, not decoration.
+- Type uses the system font stack: no third-party requests, which suits a privacy-first project. To use a brand typeface, self-host it and set `--sans` in `styles.css`.
+- The hero report and the weights chart use the real scoring weights from the project README (38 / 18 / 15 / 12 / 12 / 5). The report values are an illustrative sample and are labelled as such.
+- The sextortion detector is labelled "In development"; no accuracy figures are claimed.
+- No analytics, forms or email upload.
 
 ## Hosting
 
-These files can be hosted as a static site. The actual Streamlit analysis application is a separate service and needs its own hosting configuration. No public deployment has been made from this draft.
+Static hosting only. The Streamlit analysis app is a separate service.
